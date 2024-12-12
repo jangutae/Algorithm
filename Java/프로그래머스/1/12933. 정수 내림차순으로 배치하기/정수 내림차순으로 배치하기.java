@@ -10,10 +10,7 @@ class Solution {
         
         Arrays.sort(chars);
        
-        StringBuilder sortedStr = new StringBuilder(new String(chars));
-        sortedStr.reverse();
-        
-        answer = Long.parseLong(sortedStr.toString());
+        System.out.println(Arrays.toString(chars));
         
         return answer;
     }
