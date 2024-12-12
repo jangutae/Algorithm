@@ -9,8 +9,45 @@ class Solution {
         char[] chars = str.toCharArray();
         
         Arrays.sort(chars);
+        
+        StringBuilder sortedChars = new StringBuilder(new String(chars));
+        
+        sortedChars.reverse();
+        
+        answer = Long.parseLong(sortedChars.toString());
+        
+        System.out.println(answer);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // Arrays.sort(list);
+
+//         StringBuilder sb = new StringBuilder();
+//         for (String aList : list) sb.append(aList);
+
+//         return Long.parseLong(sb.reverse().toString());
+        
+        // char[] chars = str.toCharArray();
+        
+        // Arrays.sort(chars);
        
-        System.out.println(Arrays.toString(chars));
+        // StringBuilder sortedStr = new StringBuilder(new String(chars));
+        // sortedStr.reverse();
+        
+        // answer = Long.parseLong(sortedStr.toString());
         
         return answer;
     }
