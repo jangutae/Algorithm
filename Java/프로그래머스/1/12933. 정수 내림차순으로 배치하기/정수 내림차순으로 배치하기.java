@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 class Solution {
     public long solution(long n) {
         long answer = 0;
@@ -10,44 +11,10 @@ class Solution {
         
         Arrays.sort(chars);
         
-        StringBuilder sortedChars = new StringBuilder(new String(chars));
+        StringBuilder sorted = new StringBuilder(new String(chars));
+        sorted.reverse();
         
-        sortedChars.reverse();
-        
-        answer = Long.parseLong(sortedChars.toString());
-        
-        System.out.println(answer);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // Arrays.sort(list);
-
-//         StringBuilder sb = new StringBuilder();
-//         for (String aList : list) sb.append(aList);
-
-//         return Long.parseLong(sb.reverse().toString());
-        
-        // char[] chars = str.toCharArray();
-        
-        // Arrays.sort(chars);
-       
-        // StringBuilder sortedStr = new StringBuilder(new String(chars));
-        // sortedStr.reverse();
-        
-        // answer = Long.parseLong(sortedStr.toString());
+        answer = Long.parseLong(sorted.toString());
         
         return answer;
     }
