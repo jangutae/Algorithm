@@ -6,17 +6,11 @@ class Solution {
             for (long i = a; i <= b; i++) {
                 answer += i;
             }
-        } else if (b < a) {
+        } else {
             for (long i = b; i <= a; i++) {
                 answer += i;
             }
-        } else if (a == b) {
-            answer = a;
         }
-        
-        
-        
-      
        
         System.out.println(answer);
 
