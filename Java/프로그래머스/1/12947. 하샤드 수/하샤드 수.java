@@ -5,8 +5,7 @@ class Solution {
         boolean answer = true;
         int sum = 0;
         
-        String str = String.valueOf(x);
-        char[] chars = str.toCharArray();
+        char[] chars = String.valueOf(x).toCharArray();
         
         for (char c : chars) {
             sum += Character.getNumericValue(c);
