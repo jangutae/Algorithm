@@ -4,7 +4,7 @@ class Solution {
         int count = 0;
         
         for (int i = 0; i < seoul.length; i++) {
-            if (seoul[i].equals("Kim")) {
+            if (seoul[i].equalsIgnoreCase("kim")) {
                 answer = "김서방은 " + i + "에 있다";
                 break;
             }
