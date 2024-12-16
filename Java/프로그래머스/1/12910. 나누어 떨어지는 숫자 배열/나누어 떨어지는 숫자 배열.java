@@ -11,10 +11,6 @@ class Solution {
             }
         }
         
-        if (index == 0) {
-            index = 1;
-        }
-        
         System.out.println(index);
         
         int[] intArr = new int[index];
@@ -28,8 +24,8 @@ class Solution {
             } 
         }
         
-        if (index1 == 0) {
-            intArr[0] = -1;
+        if (intArr.length == 0) {
+            intArr = new int[]{-1};
         }
         Arrays.sort(intArr);
         System.out.println(Arrays.toString(intArr));
