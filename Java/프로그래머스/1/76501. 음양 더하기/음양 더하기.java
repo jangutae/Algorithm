@@ -3,11 +3,7 @@ class Solution {
         int answer = 0;
         
         for (int i = 0; i < absolutes.length; i++) {
-            if (signs[i] == true) {
-                answer += absolutes[i];
-            } else {
-                answer -= absolutes[i];
-            }
+           answer += signs[i] ? absolutes[i] : absolutes[i] * -1;
         }
         
         System.out.println(answer);
