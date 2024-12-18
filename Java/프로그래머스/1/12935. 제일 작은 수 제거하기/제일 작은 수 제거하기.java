@@ -5,7 +5,7 @@ class Solution {
         int[] answer = new int[arr.length - 1];
         int minIndex = 0;
         int index = 0;
-        
+       
         if (arr.length == 1) {
             answer = new int[] {-1};
         }
@@ -21,6 +21,8 @@ class Solution {
                 answer[index++] = arr[i];
             }
         }
+        
+      
         return answer;
     }
 }
