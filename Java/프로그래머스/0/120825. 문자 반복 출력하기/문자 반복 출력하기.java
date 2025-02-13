@@ -4,10 +4,8 @@ class Solution {
         String[] array = myString.split("");
         StringBuilder sb = new StringBuilder();
         
-        for (int j = 0; j < array.length; j++) {
-            for (int i = 0; i < n; i++) {
-            answer = sb.append(array[j]).toString();
-            }    
+        for (String str : array) {
+            answer = sb.append(str.repeat(n)).toString();            
         }
     
         
