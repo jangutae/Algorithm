@@ -5,15 +5,14 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         
         for (String s : array) {
-            if (s.equals("2")) {
-                sb.append("0");
-            } else if (s.equals("5")) {
-                sb.append("2");
-            } else {
-                sb.append("5");
+            switch(s) {
+                case "0" -> sb.append("5");
+                case "5" -> sb.append("2");
+                case "2" -> sb.append("0");
             }
-            answer = sb.toString();
         }
+        
+        answer = sb.toString();
         
         return answer;
     }
