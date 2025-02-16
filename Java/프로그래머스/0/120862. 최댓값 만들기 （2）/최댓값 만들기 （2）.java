@@ -5,15 +5,13 @@ class Solution {
         int answer = 0;
         
         Arrays.sort(numbers);
+        int multi1 = numbers[0] * numbers[1];
+        int multi2 = numbers[numbers.length -1] * numbers[numbers.length -2];
         
         for (int i = 0; i < numbers.length; i++) {
-            if (numbers[0] < 0 && numbers[1] < 0) {
-                answer = numbers[0] * numbers[1] > numbers[numbers.length -1] * numbers[numbers.length -2]
-                ? numbers[0] * numbers[1] : numbers[numbers.length -1] * numbers[numbers.length -2];
-            } else {
-                answer = numbers[numbers.length -1] * numbers[numbers.length -2];    
-            }
+            answer = multi1 > multi2 ? multi1 : multi2;
         }
+          
         
         return answer;
     }
