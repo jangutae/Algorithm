@@ -3,11 +3,8 @@ class Solution {
         String answer = "";
         String[] strArr = cipher.split("");
         
-        for (int i = 0; i < strArr.length; i++) {
-            if ((i + 1) % code == 0) {
+        for (int i = code - 1; i < strArr.length; i += code) {
                 answer += strArr[i];
-            }
-            
         }
         return answer;
     }
