@@ -2,29 +2,20 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] array) {
+        int maxCount = 0;
         int answer = 0;
-
-        int maxNum = Arrays.stream(array).max().orElse(0);
-        int[] count = new int[maxNum + 1]; // 숫자 범위만큼 카운트 배열 생성
-
-        // 2. 각 숫자의 빈도수 저장
-        for (int num : array) {
-            count[num]++;
-        }
-       int maxFreq = 0;
-        int mode = -1;
-        boolean multipleModes = false;
-
-        for (int i = 0; i < count.length; i++) {
-            if (count[i] > maxFreq) {
-                maxFreq = count[i];
-                mode = i;
-                multipleModes = false; // 새로운 최빈값이 나오면 단일 모드로 설정
-            } else if (count[i] == maxFreq) {
-                multipleModes = true; // 최빈값이 여러 개면 true
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int number : array){
+            int count = map.getOrDefault(number, 0) + 1;
+            if(count > maxCount){
+                maxCount = count;
+                answer = number;
             }
+            else  if(count == maxCount){
+                answer = -1;
+            }
+            map.put(number, count);
         }
-
-        return multipleModes ? -1 : mode;
+        return answer;
     }
 }
