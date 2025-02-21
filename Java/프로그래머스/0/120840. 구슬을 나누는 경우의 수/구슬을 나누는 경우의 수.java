@@ -1,18 +1,26 @@
 class Solution {
-    public long solution(int balls, int share) {
-       
-        return combination(balls, share);
-    }
+    public int solution(int balls, int share) {
+        
+//         return result(balls, share);
+//     }
     
-     private long combination(int balls, int share) {
-        if (share > balls - share) share = balls - share; // 대칭성 활용 (nCr = nC(n-r))
-        long result = 1;
-
-        for (int i = 0; i < share; i++) {
-            result *= (balls - i);
-            result /= (i + 1);
+//     private int result(int a, int b) {
+//         int value = 1;
+        
+//         for (int i = 0; i < a - b; i++) {
+//             value *= (a - i);
+//             value /= (i + 1);
+//         }
+        
+        double answer = 0;
+        double u = 1, d=1;
+        for(int i=share;i>0;i--){
+            u *= balls;
+            d *= i;
+            balls--;
         }
-
-        return result;
-    }
+        answer = u / d;
+        return (int) answer;
+        
+    } 
 }
