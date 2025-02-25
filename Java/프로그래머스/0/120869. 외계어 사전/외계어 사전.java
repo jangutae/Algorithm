@@ -7,14 +7,9 @@ class Solution {
         Arrays.sort(spell);
         Arrays.sort(dic);
         
-        StringBuilder sb = new StringBuilder();
+       String result = String.join("", spell);
         
-        for (int i = 0; i < spell.length; i++) {
-            sb.append(spell[i]);
-        }
-        
-        String sumSpell = sb.toString();
-        System.out.println(sumSpell);
+        System.out.println(result);
         System.out.println(Arrays.toString(dic));
         
         for (String s : dic) {
@@ -22,7 +17,7 @@ class Solution {
             Arrays.sort(sArr);
             String sorted = new String(sArr);
             
-             if (sorted.equals(sumSpell)) {
+             if (sorted.equals(result)) {
                 answer = 1;
             } 
         }
