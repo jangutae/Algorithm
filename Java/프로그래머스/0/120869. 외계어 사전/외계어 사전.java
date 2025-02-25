@@ -1,23 +1,32 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public int solution(String[] spell, String[] dic) {
-        // spell을 정렬하여 문자열로 변환
-        char[] spellArr = new char[spell.length];
+        int answer = 2;
+        // 두 배열 정렬
+        Arrays.sort(spell);
+        Arrays.sort(dic);
+        
+        StringBuilder sb = new StringBuilder();
+        
         for (int i = 0; i < spell.length; i++) {
-            spellArr[i] = spell[i].charAt(0);
+            sb.append(spell[i]);
         }
-        Arrays.sort(spellArr);
-        String spellStr = new String(spellArr);
-
-        // dic 배열을 순회하며 정렬된 형태와 비교
-        for (String word : dic) {
-            char[] wordArr = word.toCharArray();
-            Arrays.sort(wordArr);
-            if (new String(wordArr).equals(spellStr)) {
-                return 1; // 일치하는 단어가 존재하면 1 반환
-            }
+        
+        String sumSpell = sb.toString();
+        System.out.println(sumSpell);
+        System.out.println(Arrays.toString(dic));
+        
+        for (String s : dic) {
+            char[] sArr = s.toCharArray();
+            Arrays.sort(sArr);
+            String sorted = new String(sArr);
+            
+             if (sorted.equals(sumSpell)) {
+                answer = 1;
+            } 
         }
-        return 2; // 존재하지 않으면 2 반환
+       
+        return answer;
     }
 }
