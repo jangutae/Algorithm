@@ -1,17 +1,16 @@
 class Solution {
     public int solution(int chicken) {
         int answer = -1;
+        int serviceChicken = 0;
+        int coupon = chicken;
         
-        int service = 0;
-        int coupons = chicken;
-        
-        while (coupons >= 10) {
-            int newService = coupons / 10;
-            service += newService;
-            coupons = newService + (coupons % 10);
+        while (coupon >= 10) {
+            int newChicken = coupon / 10;
+            serviceChicken += newChicken;
+            coupon = (coupon % 10) + newChicken;
         }
         
-        answer = service;
+        answer = serviceChicken;
         
         return answer;
     }
