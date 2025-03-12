@@ -1,20 +1,16 @@
 class Solution {
     public int solution(int n, String control) {
         int answer = n;
-        String[] arr = control.split("");
         
-        for (int i = 0; i < control.length(); i++) {
-            if (arr[i].equals("w")) {
-                answer += 1;
-            } else if (arr[i].equals("s")) {
-                answer -= 1;
-            } else if (arr[i].equals("d")) {
-                answer += 10;
-            } else if (arr[i].equals("a")) {
-                answer -= 10;
+        for (String s : control.split("")) {
+            switch (s) {
+                case "w" -> answer += 1;
+                case "s" -> answer -= 1;
+                case "d" -> answer += 10;
+                case "a" -> answer -= 10;
             }
-            
         }
+        
         return answer;
     }
 }
