@@ -15,7 +15,7 @@ class Solution {
         
         for (int i = 0; i < len; i++) {
             StringBuilder sb = new StringBuilder(answer[i]);
-            answer[i] = sb.deleteCharAt(0).toString();
+            answer[i] = sb.delete(0, 1).toString();
         }
         
         return answer;
