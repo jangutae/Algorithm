@@ -3,21 +3,22 @@ class Solution {
         int answer = 0;
         int a = 0;
         int b = 0; 
-        char ch = s.charAt(0);
+        char[] chars = s.toCharArray();
+        char ch = chars[0];
               
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < chars.length; i++) {
             
-            if (s.charAt(i) == ch) {
+            if (chars[i] == ch) {
                 a++;
-            } else if (s.charAt(i) != ch) {
+            } else {
                 b++;
             }
             
             if (a == b) {
                 answer++;
                 
-                if (i + 1 < s.length()) {
-                    ch = s.charAt(i + 1);
+                if (i + 1 < chars.length) {
+                    ch = chars[i + 1];
                 }
             }
         }
