@@ -1,9 +1,19 @@
 class Solution {
     boolean solution(String s) {
-        boolean answer = true;
-        s = s.toLowerCase();
+        String lower = s.toLowerCase();        
+        int count = 0;
         
-        return s.chars().filter(p -> p == 'p').count() == s.chars().filter(y -> y == 'y').count(); 
+        for (int i = 0; i < s.length(); i++) {
+            if (lower.charAt(i) == 'p') {
+                count++;
+            } else if (lower.charAt(i) == 'y') {
+                count--;
+            }
+        }
+        
+        
+       
 
+        return count == 0;
     }
 }
