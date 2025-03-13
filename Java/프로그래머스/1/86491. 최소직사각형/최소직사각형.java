@@ -5,7 +5,7 @@ class Solution {
         int answer = 0;
         int maxX = 0;
         int maxY = 0;
-        int[][] arr = new int[sizes.length][2];
+        int[][] arr = sizes.clone();
         
         for (int i = 0; i < sizes.length; i++) {
             
