@@ -1,35 +1,25 @@
-import java.util.*;
-import java.util.stream.*;
-
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
+        int[] people = new int[n];
         int answer = n;
-        
-        Set<Integer> lostSet = new HashSet<>();
-        Set<Integer> reserveSet = new HashSet<>();
-        
-        for (int i : lost) {
-            lostSet.add(i);
-        }   
-        
-        for (int i : reserve) {
-            if (lostSet.contains(i)) {
-                lostSet.remove(i);
-            } else {
-                reserveSet.add(i);
+
+        for (int l : lost) 
+            people[l-1]--;
+        for (int r : reserve) 
+            people[r-1]++;
+
+        for (int i = 0; i < people.length; i++) {
+            if(people[i] == -1) {
+                if(i-1>=0 && people[i-1] == 1) {
+                    people[i]++;
+                    people[i-1]--;
+                }else if(i+1< people.length && people[i+1] == 1) {
+                    people[i]++;
+                    people[i+1]--;
+                }else 
+                    answer--;
             }
         }
-        
-        
-        for (int r : reserveSet) {
-            if (lostSet.contains(r - 1)) {
-                lostSet.remove(r - 1);
-            } else if (lostSet.contains(r + 1)) {
-                lostSet.remove(r + 1);
-            }
-        }
-        
-        
-        return answer - lostSet.size();
+        return answer;
     }
 }
