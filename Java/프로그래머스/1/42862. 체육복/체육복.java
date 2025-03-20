@@ -3,35 +3,32 @@ import java.util.*;
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = n;
+       
+        int[] people = new int[n];
         
-        // 읽어버린 체육복 수량 set
-        Set<Integer> lostSet = new HashSet<>();
-        
-        
-        // 여분을 가지고 있는 수량 set
-        Set<Integer> reserveSet = new HashSet<>();
-        
-        for (int i : lost) {
-            lostSet.add(i);
-        }
+        for (int l : lost) {
+            people[l - 1]--;
+        } 
         
         for (int r : reserve) {
-            if (lostSet.contains(r)) {
-                lostSet.remove(r);
-            } else {
-                reserveSet.add(r);
-            }
-                
+            people[r - 1]++;
         }
         
-        for (int set : reserveSet) {
-            if (lostSet.contains(set - 1)) {
-                lostSet.remove(set - 1);
-            } else if (lostSet.contains(set + 1)) {
-                lostSet.remove(set + 1);
+        for (int i = 0; i < people.length; i++) {
+            if (people[i] == -1) {
+                if (i - 1 >= 0 && people[i - 1] == 1) {
+                    people[i]++;
+                    people[i - 1]--;
+                } else if (i + 1 < people.length && people[i + 1] == 1) {
+                    people[i]++;
+                    people[i + 1]--;
+                } else {
+                    answer--;
+                }
             }
         }
         
-        return answer - lostSet.size();
+        System.out.println(Arrays.toString(people));
+        return answer;
     }
 }
