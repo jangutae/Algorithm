@@ -2,8 +2,7 @@ import java.util.*;
 
 class Solution {
     public String[] solution(String myString) {
-        String result = myString.replaceAll("[x]+", " ");
-        result = result.trim();
+        String result = myString.replaceAll("[x]+", " ").trim();
         String[] answer = result.split(" ");
         
 
