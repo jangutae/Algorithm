@@ -1,13 +1,16 @@
-import java.util.*;
+import java.util.Arrays;
 
 class Solution {
     public int[] solution(int[] arr) {
-        int length = 1;
-
-        while (length < arr.length) {
-            length *= 2;
+        int len = arr.length;
+        
+        int pow = 1;
+        
+        while (len > pow) {
+            pow *= 2;
         }
-
-        return Arrays.copyOf(arr, length);
+        
+        
+        return Arrays.copyOf(arr, pow);
     }
 }
